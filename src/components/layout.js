@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { StaticQuery, graphql } from "gatsby";
 import { HelmetDatoCms } from "gatsby-source-datocms";
-
+import Img from "gatsby-image"
 import "../styles/index.sass";
 
 const TemplateWrapper = ({ children }) => {
@@ -33,14 +33,13 @@ const TemplateWrapper = ({ children }) => {
             }
             copyright
           }
-          allDatoCmsSocialProfile(sort: { fields: [position], order: ASC }) {
-            edges {
-              node {
-                profileType
-                url
-              }
-            }
-          }
+          file(relativePath: { eq: "banner-yany.png" }) {
+	      childImageSharp {
+		fixed(width: 300, height: 75) {
+		  ...GatsbyImageSharpFixed
+		}
+	      }
+	   }
         }
       `}
       render={data => (
@@ -51,6 +50,7 @@ const TemplateWrapper = ({ children }) => {
           />
           <div className="container__sidebar">
             <div className="sidebar">
+              <Img fixed={data.file.childImageSharp.fixed} />
               <h6 className="sidebar__title">
                 <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
               </h6>
@@ -63,6 +63,7 @@ const TemplateWrapper = ({ children }) => {
               />
               <p className="sidebar__social">
                 <p> Discord: yany#6262 </p>
+                <p> Telegram: @Roystonlhj </p>
               </p>
               <div className="sidebar__copyright">
                 {data.datoCmsHome.copyright}
