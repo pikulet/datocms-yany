@@ -1,6 +1,6 @@
 ## :monkey_face: yany :monkey_face:
 
-:exclamation: This is a fork of (DatoCMS's gatsby portfolio sample)[https://github.com/datocms/gatsby-portfolio] :exclamation: 
+:exclamation: This is a fork of [DatoCMS's gatsby portfolio sample](https://github.com/datocms/gatsby-portfolio) :exclamation: 
 
 There are tons of site builders around and why they're so effective (especially for people not versed in dev work) is because they offer a Content Management System (CMS) that makes it easy for users to update site data.
 
